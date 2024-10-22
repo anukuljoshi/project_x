@@ -1,0 +1,55 @@
+[project]
+name = "backend"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi[standard]>=0.115.3",
+]
+
+[tool.ruff.lint]
+select = [
+    "D101",
+    "D102",
+    "D103",
+    "D207",
+    "D208",
+    "D407",
+    "D416",
+    "N",
+    "I",
+    "E",
+    "W",
+    "F",
+    "PL",
+    "FAST",
+]
+ignore = ["E402"]
+preview = true
+
+[tool.ruff]
+line-length = 80
+
+[tool.ruff.format]
+quote-style = "double"
+docstring-code-format = true
+
+[tool.pyright]
+strict = [
+    "**/*"
+]
+exclude = [
+    "**/node_modules",
+    "**/__pycache__",
+    "env/**/*",
+    ".venv/"
+]
+defineConstant = { DEBUG = true }
+
+typeCheckingMode = "strict"
+reportMissingImports = "error"
+reportMissingTypeStubs = true
+
+pythonVersion = "3.12"
+pythonPlatform = "Linux"
